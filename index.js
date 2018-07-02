@@ -19,6 +19,8 @@ function getStateInformations(req, res) {
   console.log(req.body.conversation.memory[0].value);
   console.log(req.body.conversation.memory[0].state);
   console.log(req.body.nlp.entities.state.value);
+    console.log(req.body.conversation.memory);
+      console.log(req.body.conversation.memory.state);
   const state = req.body.conversation.memory.state.value;
   const stateInfos = findStateByName(state);
   if (!stateInfos) {

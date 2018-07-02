@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 //const contactinfo = require('./file.js');
-const db = require('./data.json');
+const db = require('./poke.json');
 
 
 
@@ -17,10 +17,10 @@ function findStateByName(name) {
 
 function getStateInformations(req, res) {
   
-    console.log(req.body.conversation.memory);
+    
    
-  const state = req.body.conversation.memory.state.value;
-  const stateInfos = findStateByName(state);
+  const state = req.body.conversation.memory.state;
+  const stateInfos = findStateByName(state.value);
   if (!stateInfos) {
     res.json({
       replies: [
@@ -32,8 +32,8 @@ function getStateInformations(req, res) {
       replies: [
         { type: 'text', content: `🔎${stateInfos.name} infos` },
         { type: 'text', content: `district: ${stateInfos.District}` },
-        { type: 'text', content: stateInfos.Landline },
-        { type: 'picture', content: stateInfos.Mobile },
+        //{ type: 'text', content: stateInfos.Landline },
+        //{ type: 'picture', content: stateInfos.Mobile },
       ],
     });
   }

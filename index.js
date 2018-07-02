@@ -17,7 +17,7 @@ function findStateByName(name) {
 
 function getStateInformations(req, res) {
   const state = req.body.conversation.memory.state;
-  const stateInfos = findStateByName(req.body.conversation.memory.state.value);
+  const stateInfos = findStateByName(state[0].value);
   if (!stateInfos) {
     res.json({
       replies: [

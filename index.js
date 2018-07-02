@@ -16,7 +16,7 @@ function findStateByName(name) {
 
 
 function getStateInformations(req, res) {
-  console.log(req.body.conversation.memory.state);
+  console.log(req.body.conversation.memory);
   const state = req.body.conversation.memory.state.value;
   const stateInfos = findStateByName(state);
   if (!stateInfos) {

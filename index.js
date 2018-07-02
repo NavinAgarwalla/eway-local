@@ -16,6 +16,7 @@ function findStateByName(name) {
 
 
 function getStateInformations(req, res) {
+  console.log(req.body.conversation.memory.state);
   const state = req.body.conversation.memory.state.value;
   const stateInfos = findStateByName(state);
   if (!stateInfos) {
@@ -52,7 +53,7 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
 	console.log(`App is listening on port ${PORT}`);});
 
-console.log(req.body.conversation.memory.state);
+
 
 
 

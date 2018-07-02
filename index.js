@@ -52,6 +52,8 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
 	console.log(`App is listening on port ${PORT}`);});
 
+console.log(req.body.conversation.memory.state);
+
 
 
 /*

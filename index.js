@@ -18,7 +18,6 @@ function findStateByName(name) {
 function getStateInformations(req, res) {
   const state = req.body.conversation.memory.state;
   const stateInfos = findStateByName(state);
-
   if (!stateInfos) {
     res.json({
       replies: [
@@ -36,6 +35,7 @@ function getStateInformations(req, res) {
     });
   }
 }
+
 const app = express();
 app.use(bodyParser.json());
 

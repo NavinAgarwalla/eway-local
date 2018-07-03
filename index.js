@@ -20,8 +20,11 @@ function getStateInformations(req, res) {
     
    
   const state = req.body.conversation.memory.state;
+
+  const memory = req.body.conversation.memory
   const stateInfos = findStateByName(state.value);
   console.log(state);
+  console.log(memory);
   if (!stateInfos) {
     res.json({
       replies: [
